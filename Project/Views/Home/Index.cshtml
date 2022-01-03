@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+@model Project.Models.Currency
+
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="InvestBANK">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Страница 1</title>
+
+    <link href="~/css/nicepage.css" rel="stylesheet" />
+    <link href="~/css/page1.css" rel="stylesheet" />
+
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <meta name="generator" content="Nicepage 3.29.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 1">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body">
+    <section class="u-clearfix u-section-1" id="sec-0407">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <a href="Login/index" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-radius-50 u-btn-1">History</a>
+            <form asp-action="DateSwitchControl" asp-controller="DateSwitch" method="post">
+                <button type="submit"  class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-radius-50 u-btn-1">Date+1</button>
+            </form>
+            
+            <a href="Login/index" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1 exit-allign">EXIT</a>
+            <h1 class="u-text u-text-default u-text-1">InvestBANK</h1>
+
+            <select asp-for="CurrencyId" asp-items=@ViewBag.Currencies class="u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-2" onchange="onCurrencyValueChange()"></select>
+
+            <div class="u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+                            <form asp-action="RedirectToBank" asp-controller="Home" method="post">
+                                <button type="submit" onclick="onBuyButtomClick()" class="u-btn u-btn-round u-button-style u-custom-item u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-3">BUY</button>
+                            </form>                            
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
+                            <a href="" class="u-btn u-btn-round u-button-style u-custom-item u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-4">SELL</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                            <a href="~/Views/kek.cshtml" class="u-btn u-btn-round u-button-style u-custom-item u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-5">CREDIT</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
+                            <a href="C:\Users\Nikita\Desktop\Project C\Front\Страница-2.html" class="u-btn u-btn-round u-button-style u-custom-item u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-6">DEPOSIT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+<script>
+    function onCurrencyValueChange() {
+        //alert
+        var data = { selectedCurrency: $('#CurrencyId').val() };
+        $.ajax({
+            type: "POST",
+            url: 'Home/SaveToSession',
+            data: data
+        });
+    }
+
+    function onBuyButtomClick() {
+        //alert
+        var data = @ViewBag.CurrentAccount.AccountId;
+        $.ajax({
+            type: "POST",
+            url: 'Home/RedirectToBank',
+            data: data
+        });
+    }
+</script>

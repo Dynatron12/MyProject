@@ -1,0 +1,80 @@
+﻿@model IOrderedEnumerable<KeyValuePair<string, IEnumerable<Repository.Models.BankRowViewModel>>>
+@{
+    Layout = null;
+} 
+
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="BUY">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Страница 2</title>
+    <link href="~/css/nicepage.css" rel="stylesheet" />
+    <link href="~/css/page2.css" rel="stylesheet" />
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.29.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 2">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body">
+    <section class="u-clearfix u-section-1" id="sec-1eb1">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-text u-text-default u-text-1"> choosing a bank</h1>
+            <div class="u-table u-table-responsive u-table-1">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="30.0%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                    </colgroup>
+                    <thead class="u-black u-table-header u-table-header-1">
+                        <tr style="height: 25px;">
+                            <th class="u-border-1 u-border-black u-table-cell">Bank</th>
+                            @*<th class="u-border-1 u-border-black u-table-cell">18.11.21</th>
+        <th class="u-border-1 u-border-black u-table-cell">17.11.21</th>
+        <th class="u-border-1 u-border-black u-table-cell">16.11.21</th>
+        <th class="u-border-1 u-border-black u-table-cell">15.11.21</th>
+        <th class="u-border-1 u-border-black u-table-cell">
+            14.11.21<br>
+        </th>
+        <th class="u-border-1 u-border-black u-table-cell">
+            13.11.21<br>
+        </th>*@
+                            @foreach (var date in Model.First().Value)
+                            {
+                                <th class="u-border-1 u-border-black u-table-cell">@date.Date.ToShortDateString()</th>
+
+                            }
+                        </tr>
+                    </thead>
+                    <tbody class="u-table-body">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Key)</td>
+                            @foreach (var val in item.Value)
+                            {
+                                <td>@Html.DisplayFor(modelItem => val.Price)</td>
+
+                            }
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>   
+</body>
+</html>

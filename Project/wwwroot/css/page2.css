@@ -1,0 +1,127 @@
+﻿.u-section-1 .u-sheet-1 {
+    min-height: 1190px;
+}
+
+.u-section-1 .u-text-1 {
+    font-weight: 900;
+    margin: 17px auto 0;
+}
+
+.u-section-1 .u-table-1 {
+    width: 979px;
+    margin: 178px auto 0;
+}
+
+.u-section-1 .u-table-header-1 {
+    font-weight: 700;
+    background-image: none;
+}
+
+.u-section-1 .u-btn-1 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: -445px auto 0 110px;
+}
+
+.u-section-1 .u-btn-2 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: -120px auto 0 110px;
+}
+
+.u-section-1 .u-btn-3 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 105px auto 0 110px;
+}
+
+.u-section-1 .u-btn-4 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 35px auto 0 110px;
+}
+
+.u-section-1 .u-btn-5 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 35px auto 0 110px;
+}
+
+.u-section-1 .u-btn-6 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 35px auto 0 110px;
+}
+
+.u-section-1 .u-btn-7 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px auto 60px 110px;
+}
+
+@media (max-width: 1199px) {
+    .u-section-1 .u-table-1 {
+        height: 350px;
+        width: 940px;
+    }
+
+    .u-section-1 .u-btn-1 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-2 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-3 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-4 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-5 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-6 {
+        margin-left: 0;
+    }
+
+    .u-section-1 .u-btn-7 {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .u-section-1 .u-table-1 {
+        width: 720px;
+    }
+}
+
+@media (max-width: 767px) {
+    .u-section-1 .u-table-1 {
+        width: 540px;
+    }
+}
+
+@media (max-width: 575px) {
+    .u-section-1 .u-table-1 {
+        width: 340px;
+    }
+}
